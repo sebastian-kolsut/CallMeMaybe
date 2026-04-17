@@ -77,7 +77,6 @@ class Prompter:
 
     def _get_argument_from_llm(self, type: str, prompt: str):
         encoded = self.model.encode(prompt)[0].tolist()
-        new_line = self.model.encode("\n")[0].tolist()[0]
         if type == "number":
             tokens = self._get_number_mask()
 
@@ -86,9 +85,9 @@ class Prompter:
             if type == "number":
                 logits = self._apply_mask_to_logits(tokens, logits)
             next_word = int(np.argmax(logits))
-            if next_word == new_line:
-                break
             encoded.append(next_word)
+            if "\n" in self.model.decode(next_word):
+                break
 
         return encoded
 

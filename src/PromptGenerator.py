@@ -56,8 +56,7 @@ class PromptGenerator:
             You are a function calling LLM and your task is to pick
             the arguments from the user's prompt wich will be used
             in the given function. If you finish the given argument write
-            a newline.The output has to be a valid json where the key is
-            the name of the parameter and the value is the value.
+            a newline.
 
             This is the function mentioned above:
             """

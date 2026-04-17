@@ -7,7 +7,7 @@ import time
 # EOS Token ID: 151645
 def main() -> None:
     model = Small_LLM_Model()
-    user_prompt = "What is the sum of -2 and 3?"
+    user_prompt = "WHat is the sum of 200 and 14"
 
     before = time.time()
     gen = PromptGenerator("data/input/functions_definition.json")
