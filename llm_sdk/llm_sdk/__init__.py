@@ -9,7 +9,6 @@ from transformers import AutoModelForCausalLM, AutoTokenizer, PreTrainedTokenize
 from huggingface_hub import hf_hub_download
 import os
 
-
 logging.set_verbosity_error()  # keep the console clean
 
 
@@ -45,7 +44,7 @@ class Small_LLM_Model:
             elif torch.cuda.is_available():
                 device = "cuda"
             else:
-                device = "cpu"
+                device = "cuda"
         self._device = device
 
         if dtype is None:
